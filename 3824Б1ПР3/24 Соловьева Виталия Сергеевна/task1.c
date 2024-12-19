@@ -2,6 +2,14 @@
 // Вернуть 1, если его элементы образуют геометрическую прогрессию,
 // иначе вернуть 0.
 int task1(double A[], size_t n)
-{
+{ if (n < 2){
+  return 0;
+}
+ double r = A[1] / A[0];
+ for (size_t i = 1; i < n - 1; i++){
+   if (A[i] == 0 || A[i + 1] / A[i] != r){
+     return 0;
+   }
+ }
   return -1;
 }
